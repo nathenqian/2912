@@ -43,8 +43,8 @@ public class GlobeSortClient {
 long stTime = System.currentTimeMillis();
         serverStub.ping(Empty.newBuilder().build());
 long endTime = System.currentTimeMillis();        
-System.out.println("Ping successful. Total use " + ((Long)(endTime - stTime)).toString() + " ms,
-    in half it would be " + ((Long)(endTime - stTime)).toString());
+System.out.println("Ping successful. Total use " + (endTime - stTime) 
+    + " ms, in half it would be " + (endTime - stTime));
 
         System.out.println("Requesting server to sort array");
 stTime = System.currentTimeMillis();
@@ -54,8 +54,8 @@ long requestFinTime = System.currentTimeMillis();
 endTime = System.currentTimeMillis();        
 long sortTime = response.getTime();
         System.out.println("Sorted array finish");
-        System.out.println("start at " + stTime + "  requestFinTime = " + requestFinTime + 
-            "   endTime = " + endTime + "  sortTime = " + sortTime);
+        System.out.println("start at " + stTime + "  requestFinTime = " + requestFinTime 
+            + "   endTime = " + endTime + "  sortTime = " + sortTime);
     }
 
     public void shutdown() throws InterruptedException {
