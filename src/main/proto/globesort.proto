@@ -15,5 +15,5 @@ message Empty {
 
 message IntArray {
   repeated int32 values = 1;
-  optional int64 time = 2;
+  int64 time = 2;
 }
