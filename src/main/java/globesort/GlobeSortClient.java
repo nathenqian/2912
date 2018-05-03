@@ -45,7 +45,7 @@ long stTime = System.currentTimeMillis();
 long endTime = System.currentTimeMillis();        
 System.out.println("Ping successful. Total use " + (endTime - stTime) 
     + " ms, in half it would be " + ((endTime - stTime) / 2.0));
-
+        return;
         System.out.println("Requesting server to sort array");
 stTime = System.currentTimeMillis();
         IntArray request = IntArray.newBuilder().addAllValues(Arrays.asList(values)).build();
