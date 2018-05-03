@@ -47,11 +47,11 @@ public class GlobeSortClient {
 //     + " ms, in half it would be " + ((endTime - stTime) / 2.0));
         
         System.out.println("Requesting server to sort array");
-stTime = System.currentTimeMillis();
+long stTime = System.currentTimeMillis();
         IntArray request = IntArray.newBuilder().addAllValues(Arrays.asList(values)).build();
 long requestFinTime = System.currentTimeMillis();
         IntArray response = serverStub.sortIntegers(request);
-endTime = System.currentTimeMillis();        
+long endTime = System.currentTimeMillis();        
 long sortTime = response.getTime();
         System.out.println("Sorted array finish");
         System.out.println("start at " + stTime + "  requestFinTime = " + requestFinTime 
