@@ -46,21 +46,6 @@ long endTime = System.currentTimeMillis();
 System.out.println("Ping successful. Total use " + (endTime - stTime) 
     + " ms, in half it would be " + ((endTime - stTime) / 2.0));
         return;
-        System.out.println("Requesting server to sort array");
-stTime = System.currentTimeMillis();
-        IntArray request = IntArray.newBuilder().addAllValues(Arrays.asList(values)).build();
-long requestFinTime = System.currentTimeMillis();
-        IntArray response = serverStub.sortIntegers(request);
-endTime = System.currentTimeMillis();        
-long sortTime = response.getTime();
-        System.out.println("Sorted array finish");
-        System.out.println("start at " + stTime + "  requestFinTime = " + requestFinTime 
-            + "   endTime = " + endTime + "  sortTime = " + sortTime);
-
-        System.out.println("application level time = " + (endTime - stTime) + " throughput = " +
-            1.0 * Arrays.asList(values).size() / (endTime - stTime) * 1000.0 + " interger/S");
-        System.out.println("network level time = " + (endTime - stTime - sortTime) + " one-way throughput = " +
-            2.0 * Arrays.asList(values).size() / (endTime - stTime - sortTime) * 1000.0 + " interger/S");
     }
 
     public void shutdown() throws InterruptedException {
